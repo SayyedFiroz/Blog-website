@@ -6,57 +6,69 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="We deliever truth with facts." />
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="css/main.css" />
     </head>
     
     <body>
         <header>
-            <div class="hlogo">
+            <div class="hmain ">
+            <div class="hlogo ">
                 <p>SMF</p>
             </div>
-            <div class="hcontent">
-                <span></span>
-                <a href="./contents/home.html" >Home</a>
+            <div class="hcontent ">
+                <a href="./contents/home.html" > Home</a>
                 <a href="./contents/sports.html" >Sports</a>
                 <a href="./contents/politics.html" >Politics</a>
                 <a href="./contents/social.html" >Social</a>
-                <a href="./contents/travel.html" >Social</a>
+                <a href="./contents/social.html" >Videos</a>
             </div>
-            
+            <button onclick="navdisplay()" class="hbt1"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z" fill="white"/></svg></button>
+            <button onclick="navdisplay()" class="hbt2"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="20px" height="20px"><g fill="#4e4feb" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,256v-256h256v256z" id="bgRectangle"></path></g><g fill="#e4e4ee" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M7.71875,6.28125l-1.4375,1.4375l17.28125,17.28125l-17.28125,17.28125l1.4375,1.4375l17.28125,-17.28125l17.28125,17.28125l1.4375,-1.4375l-17.28125,-17.28125l17.28125,-17.28125l-1.4375,-1.4375l-17.28125,17.28125z"></path></g></g></svg></button>
+            </div>
         </header>
+
         <div class="navi">
-            <h1>NEWS</h1>
-            <div class="navi-content">
-                <ul class="navi-list"><li><a href="./contents/home.html" >Home |</a></li> <li>Wars |</li> <li>Climate |</li> <li>Tech |</li> <li>Science |</li> <li>More |</li> </ul>
+            <div class=navi-main>
+                    <h1 class="nlogo">NEWS</h1>
+                <div class="navi-content">
+                    <ul class="navi-list">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="15px" height="15px"><g fill="white" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,1.05078c-0.2175,0 -0.43414,0.06898 -0.61914,0.20898l-23,17.95117c-0.43,0.34 -0.50992,0.9682 -0.16992,1.4082c0.34,0.43 0.9682,0.50992 1.4082,0.16992l1.38086,-1.07812v26.28906c0,0.55 0.45,1 1,1h14v-18h12v18h14c0.55,0 1,-0.45 1,-1v-26.28906l1.38086,1.07812c0.19,0.14 0.39914,0.21094 0.61914,0.21094c0.3,0 0.58906,-0.13086 0.78906,-0.38086c0.34,-0.44 0.26008,-1.0682 -0.16992,-1.4082l-23,-17.95117c-0.185,-0.14 -0.40164,-0.20898 -0.61914,-0.20898zM35,5v1.05078l6,4.67969v-5.73047z"/></g></g></svg><a class="nlink" href="./contents/home.html" >Home</a></li>
+                        <li>&nbsp; <img class="nimg"src="icon/arrow_icon.png" alt="icon" height="14px" width="14px"><a class="nlink" href="./contents/.html" > Climate</a></li> 
+                        <li>&nbsp; <img class="nimg"src="icon/arrow_icon.png" alt="icon" height="14px" width="14px"> Tech </li> 
+                        <li>&nbsp; <img class="nimg"src="icon/arrow_icon.png" alt="icon" height="14px" width="14px"> Science </li> 
+                        <li>&nbsp; <img class="nimg"src="icon/arrow_icon.png" alt="icon" height="14px" width="14px"> More </li> 
+                        </ul>
+                </div>
             </div>
         </div>
 
-
         <div class="hero_carousel">
             <div class="container_carousel">
-                <ul class="track_carousel">
-                    <li class="carousel_slide">
-                        <img  class="carousel_images" src="images/SMF C.jpg" alt="image1">
-                        <div class="carousel_headline">
-                        <h2>This is headline lqwfg'qowufgq'ufgq'iwfvq'iwfqiwf/'vqwfihqvwfiqwfv'qwi </h2>
+                <ul class="track_carousel"> 
+                    <li class="carousel_slide current_slide">
+                        <a class='carl1' href="contents/carousel/carousel_1.html" >
+                        <img  class="carousel_images " src="images/carousel/tesla_c1.jpg" alt="image1" width="100%">
+                        <div class="carousel_headline carh1">
+                            Tesla Roars to New Heights as Stock Surges to All-Time High !
                         </div>
+                    </a>
                     </li>
-                    <li class="carousel_slide">
-                        <img  class="carousel_images" src="images/SMF C.jpg" alt="image2">
-                        <div class="carousel_headline">
-                        <h2>This is head line ihwe[gw[gbw[ugbw'ejbgwefbwoifwhef]iwhfw]iefbwoefbwfjwbfjw</h2>
-                        </div>
-                    </li>
-                    <li class="carousel_slide">
-                        <img class="carousel_images" src="images/SMF B.png" alt="image3">
-                        <div class="carousel_headline">
-                        <h2 >This is head line whf]iwehfw[fhw[ufgw[ufgw[uefgw[eufgwufgwfugfuwgf[wuiegfwuiegfwuf</h2>
+                   <li class="carousel_slide">
+                        <img  class="carousel_images" src="images/SMF r.jpg" alt="image2">
+                        <div class="carousel_headline cah1r">
+                             This is Headline 2....................of SMF NEWS................
                         </div>
                     </li>
                     <li class="carousel_slide">
                         <img class="carousel_images" src="images/SMF B.png" alt="image3">
                         <div class="carousel_headline">
-                        <h2 >This is head line whf]iwehfw[fhw[ufgw[ufgw[uefgw[eufgwufgwfugfuwgf[wuiegfwuiegfwuf</h2>
+                            This is Headline 3....................of SMF NEWS................
+                        </div>
+                    </li>
+                    <li class="carousel_slide">
+                        <img class="carousel_images" src="images/SMF B.png" alt="image3">
+                        <div class="carousel_headline">
+                         This is Headline 4....................of SMF NEWS................
                         </div>
                     </li>
                 </ul>
@@ -64,18 +76,75 @@
             <button class="button_carousel button_carousel--left">  
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z" fill="white"></path></svg>
             </button>
-
             <button class="button_carousel button_carousel--right">
                 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" fill="white" </path></svg>
                 </button>
     </div>
-    <!-- <div class="carousel_nav">
+    <div class="carousel_nav">
         <button class="carousel_indicator current_slide"></button>
         <button class="carousel_indicator"></button>
         <button class="carousel_indicator"></button>
         <button class="carousel_indicator"></button>
-    </div> -->
+    </div>
+    <div>
+    </div>
+    <div class="trending">
+        <span class="t-span">Trending</span>
+        <hr>
+        <div class="trending-card">
+            <div class="card card1">
+                <a href="contents/carousel/carousel_1.html">
+                    <figure>
+                            <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli">
+                            <figcaption>Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="card card2">
+                <a href="contents/carousel/carousel_1.html">
+                 <figure>
+                        <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                        <figcaption> Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+              </figure>
+                </a>
+            </div>
+            <div class="card card3">
+                <a href="contents/carousel/carousel_1.html">
+                 <figure>
+                        <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                        <figcaption>Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+              </figure>
+                </a>
+            </div>
+            <div class="card card4">
+                <a href="contents/carousel/carousel_1.html">
+                 <figure>
+                        <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                        <figcaption> Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+              </figure>
+                </a>
+            </div>
+            <div class="card card5">
+                <a href="contents/carousel/carousel_1.html">
+                 <figure>
+                        <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                        <figcaption> Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+              </figure>
+                </a>
+            </div>
+            <div class="card card6">
+                <a href="contents/carousel/carousel_1.html">
+                 <figure>
+                        <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                        <figcaption>Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+              </figure>
+                </a>
+            </div>
+        </div>
 
+    <script src="script.js"></script>
+    <script src="js/carousel.js"></script>
     </body>
+
 
 </html>
