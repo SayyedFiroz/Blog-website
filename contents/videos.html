@@ -6,6 +6,9 @@
     <title>SMF Video</title>
     <link rel="stylesheet" href="../css/main.css" />
     <style>
+        :root {
+            --red:rgb(209, 15, 15);
+        }
         main{
             width: 80%;
             max-width: 1248px;
@@ -28,7 +31,7 @@
             height: 0;
             border-top: 0.8rem solid blue;
             border-bottom: 0.8rem solid transparent;
-            border-left: 1.3rem solid rgb(209, 15, 15);
+            border-left: 1.3rem solid var(--red);
             cursor: pointer;
             transition: border-color 0.3s ease-in-out;
             margin:0.8rem;
@@ -48,6 +51,101 @@
             flex-direction: row;
             flex-wrap: column;
             max-width: 1248px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap:2rem;
+            padding: 0;
+            margin-left: 0.3rem;
+        }
+        .v-link:link{
+            color:black;
+            text-decoration: none;
+            padding: 0;
+        }
+        .v-link:hover{
+            color: var(--red);
+        }
+        .v-link:link::after{
+          content: "_______";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          width: 0%;
+          height: 3px;
+          color: transparent;
+          z-index: 10;
+          padding: 0px;
+          margin: 0px;
+            
+        }
+        .v-link-latest:link:after{
+            content: "_____";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            width: 0%;
+            height: 3px;
+            color: transparent;
+            background-color: transparent;
+            z-index: 10;
+        }
+
+        .v-link:hover::after{
+          content: "_______";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          height: 3px;
+          color: var(--red);
+          background-color: var(--red);
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          transition: width 0.5s ease-in-out;
+          width: 100%;
+        }
+        .v-link-latest:hover::after{
+          content: "_____";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          height: 3px;
+          color: var(--red);
+          background-color: var(--red);
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          transition: width 0.5s ease-in-out;
+          width: 100%;
+        }
+        .v-link:visited::after {
+          content: "_____";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          height: 3px;
+          color: beige;
+          background-color: var(--red);
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          transition: width 0.5s ease-in-out;
+          width: 100%;
+        }
+        div .videom{
+            margin: 0.8rem;
         }
         @media only screen and (max-width: 635px)
         {
@@ -98,7 +196,21 @@
         </div>
     </div>
     <main>
-    <p>This is Page contains news in videos.</p>
+        <ul class="V-ul">
+            <li><a class="v-link" onclick=load() href="">Top videos</a></li>
+            <li><a class="v-link v-link-latest" onclick=load() href="">Latest</a></li>
+            <li><a class="v-link" onclick=load() href="">Classics</a></li>
+        </ul>
+        <div id="TopvideosC">
+            <P class="videom" >Top videos will show here</P>
+        </div>
+        <div id="LatestC">
+            <P class="videom">Top videos will show here</P>
+        </div>
+        <div id="ClassicsC">
+            <P class="videom">Top videos will show here</P>
+        </div>
     </main>
+    <script src="../js/Video.js"></script>
 </body>
 </html>
