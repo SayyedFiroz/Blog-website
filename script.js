@@ -11,3 +11,4 @@ function navdisplay(){
     hlogo.toggle("hlogo_r")
     // hbt[0].LastChild.innerHTML="<img src="/icon/SMF.jpg" alt ="close"/>"
 }
+console.log("index.js")

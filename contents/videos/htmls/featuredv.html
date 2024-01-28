@@ -3,9 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SMF Video</title>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <style>
+             :root {
+            --red:rgb(209, 15, 15);
+        }
+        main{
+            width: 80%;
+            max-width: 1248px;
+            margin: 0 auto;
+        }
+        header{
+            box-shadow: none;
+            border-bottom: 5px solid #4E4FEB
+        }
+        .hmain{
+            border-bottom: #4E4FEB;
+        }
+        .navi{
+            background-color: white;
+            color: #4E4FEB;
+            margin-top: 4rem;
+        }
+        .n-bullet{
+            width: 0;
+            height: 0;
+            border-top: 0.8rem solid blue;
+            border-bottom: 0.8rem solid transparent;
+            border-left: 1.3rem solid var(--red);
+            cursor: pointer;
+            transition: border-color 0.3s ease-in-out;
+            margin:0.8rem;
+            margin-top: 2rem;
+        } 
+        .nlogo{
+            color: #4E4FEB;
+            font-weight: 400;
+            font-size: 32px;
+            list-style: square;
+        }
+        .navi-main{
+            width:80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: start;
+            flex-direction: row;
+            flex-wrap: column;
+            max-width: 1248px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap:2rem;
+            padding: 0;
+            margin-left: 0.3rem;
+        }
+        
+        .v-link:link{
+            color:black;
+            text-decoration: none;
+            padding: 0;
+        }
+        .v-link:hover{
+            color: var(--red);
+        }
+        .v-link:link::after{
+          content: "_______";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          width: 0%;
+          height: 3px;
+          color: transparent;
+          z-index: 10;
+          padding: 0px;
+          margin: 0px;
+            
+        }
+        #v-link-latest:link:after{
+            content: "_____";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            width: 0%;
+            height: 3px;
+            color: transparent;
+            background-color: transparent;
+            z-index: 10;
+        }
+
+        .v-link:hover::after{
+          content: "______";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          height: 3px;
+          color: var(--red);
+          background-color: var(--red);
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          transition: width 0.5s ease-in-out;
+          width: 100%;
+        }
+        #v-link-latest:hover::after{
+          content: "_____";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          height: 3px;
+          background-color: var(--red);
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          transition: width 0.5s ease-in-out;
+          width: 100%;
+        }.v-link:visited{
+            color: black;
+        }
+        .v-link:visited::after {
+          content: "_____";
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0;
+          height: 3px;
+          color: beige;
+          background-color: var(--red);
+          z-index: 10;
+          padding: 0;
+          margin: 0;
+          transition: width 0.5s ease-in-out;
+          width: 100%;
+        }
+        div .videom{
+        margin:0 0 0.3rem 0.3rem;
+        }
+        #LatestC,#ClassicsC{
+            display: none;
+        }
+        .v-main-c{
+            width: 70%;
+        }
+        .trending{
+            margin: 0;
+            width: 100%;
+        }
+        .trending-card{
+            margin: 1rem 0rem 0rem 0rem;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        }
+        .v-main{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 5px;
+            flex-wrap: nowrap;
+        }
+        .v-main-ad{
+            width: 25%;
+        }
+        .trending>.t-span{
+            background-color: transparent;
+            color: black;
+            font-size: 1.5em;
+            padding: 0.2rem;
+            margin-bottom: 3rem;
+            
+        }
+        figcaption{
+            color: black;
+        }
+    
+        video{
+            position: relative;
+            z-index: 0;
+        }
+        .playbg{
+            height: 1em;
+            width: 2em;
+            background: rgba(241, 237, 237, 0.895);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top:0px;
+            left:0px;
+            z-index: 1000;
+            border-radius: 5px;
+        }
+        
+
+        @media only screen and (max-width: 635px)
+        {
+            .n-bullet{
+                margin-top: 1rem;
+                border-top: 0.5rem solid blue;
+                border-bottom: 0.5rem solid transparent;
+                border-left: 1rem solid rgb(209, 15, 15);
+            }
+            .nlogo{
+                margin-top: 0;
+            }
+            .navi-main{
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 0;
+            flex-wrap: nowrap;
+            }
+            main{
+                width: 100%;
+            }
+            .trending-card{
+            width: 70%;
+            margin: 1rem 0rem 0rem 0rem;
+            grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+
+            }
+            .card{
+                width: 100%;
+                height: 100%;
+                flex-direction: row;
+            }
+            figcaption{
+                font-size: 0.6rem;
+            }
+            p{
+                font-size: 0.6rem;
+            }
+            video{
+                height: 100%;
+            }
+            
+
+    }
+    @media  screen and (max-width:480px) {
+    .trending-card{
+                width: 70%;
+                margin: 1rem 0rem 0rem 0rem;
+                grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+
+                }
+    figure{
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    }
+        
+</style>
 </head>
 <body>
-    <h1>There will be media player here</h1>
+    <header>
+        <div class="hmain ">
+        <div class="hlogo ">
+            <p>SMF</p>
+        </div>
+        <div class="hcontent ">
+            <a href="../../../index.html" > Home</a>
+            <a href="../../sports.html" >Sports</a>
+            <a href="../../politics.html" >Politics</a>
+            <a href="../../social.html" >Social</a>
+            <a href="../../videos.html" target="_blank" >Videos</a>
+        </div>
+        <button onclick="navdisplay()" class="hbt1"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z" fill="white"/></svg></button>
+        <button onclick="navdisplay()" class="hbt2"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="20px" height="20px"><g fill="#4e4feb" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,256v-256h256v256z" id="bgRectangle"></path></g><g fill="#e4e4ee" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M7.71875,6.28125l-1.4375,1.4375l17.28125,17.28125l-17.28125,17.28125l1.4375,1.4375l17.28125,-17.28125l17.28125,17.28125l1.4375,-1.4375l-17.28125,-17.28125l17.28125,-17.28125l-1.4375,-1.4375l-17.28125,17.28125z"></path></g></g></svg></button>
+        </div>
+    </header>
+
+    <div class="navi">
+        <div class=navi-main>
+            <div class="n-bullet"></div> 
+            <h1 class="nlogo">Video</h1>
+        </div>
+    </div>
+    <main>
+        <div class="main-video">
+            <video width="100%" height="100%" controls>
+                <source src="../assets/new plant species nvideo1.mp4" >
+            </video>
+        </div>
+        <ul class="V-ul">
+            <li><a class="v-link" id="v-link-topv" onclick=load(this.id);show(TopvideosC) href="#Topvideosc">Top videos</a></li>
+            <li><a class="v-link" id="v-link-latest" onclick=load(this.id);show(LatestC) href="#Topvideosc">Latest</a></li>
+            <li><a class="v-link" id="v-link-classic" onclick=load(this.id);show(ClassicsC) href="#Topvideoc">Classics</a></li>
+        </ul>
+        <div class="v-main">
+            <div class="v-main-c">
+                <div id="TopvideosC">
+                    <div class="trending">
+                    <span class="t-span">Featured videos</span>
+                        <div class="trending-card">
+                            <div class="card card1">
+                                <a href="../.././videos/htmls/featuredv.html">
+                                    <figure>
+                                            <video class="crvideo1" src="../../videos/assets/new plant species nvideo1.mp4" width="100%" muted="muted"><div class="playbg">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.674 2.159 7.803 4.93a1.053 1.053 0 0 1 0 1.822l-7.803 4.93a1.115 1.115 0 0 1-1.511-.35A1.049 1.049 0 0 1 4 12.93V3.068C4 2.48 4.492 2 5.098 2c.203 0 .403.055.576.159z" fill="white"></path></svg>
+                                            </div></video>
+                                            <figcaption>New Plant species is discoverd by Brooknew University Professor</figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="card card2">
+                               <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <video class="crvideo1" src="../../videos/assets/new plant species nvideo1.mp4" width="100%" muted="muted"><div class="playbg">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.674 2.159 7.803 4.93a1.053 1.053 0 0 1 0 1.822l-7.803 4.93a1.115 1.115 0 0 1-1.511-.35A1.049 1.049 0 0 1 4 12.93V3.068C4 2.48 4.492 2 5.098 2c.203 0 .403.055.576.159z" fill="white"></path></svg>
+                                            </div></video>
+                                            <figcaption>New Plant species is discoverd by Brooknew University Professor</figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="card card3">
+                               <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <video class="crvideo1" src="../../videos/assets/new plant species nvideo1.mp4" width="100%" muted="muted"><div class="playbg">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.674 2.159 7.803 4.93a1.053 1.053 0 0 1 0 1.822l-7.803 4.93a1.115 1.115 0 0 1-1.511-.35A1.049 1.049 0 0 1 4 12.93V3.068C4 2.48 4.492 2 5.098 2c.203 0 .403.055.576.159z" fill="white"></path></svg>
+                                            </div></video>
+                                            <figcaption>New Plant species is discoverd by Brooknew University Professor</figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="card card4">
+                               <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <video class="crvideo1" src="../../videos/assets/new plant species nvideo1.mp4" width="100%" muted="muted"><div class="playbg">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.674 2.159 7.803 4.93a1.053 1.053 0 0 1 0 1.822l-7.803 4.93a1.115 1.115 0 0 1-1.511-.35A1.049 1.049 0 0 1 4 12.93V3.068C4 2.48 4.492 2 5.098 2c.203 0 .403.055.576.159z" fill="white"></path></svg>
+                                            </div></video>
+                                            <figcaption>New Plant species is discoverd by Brooknew University Professor</figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="card card5">
+                               <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <video class="crvideo1" src="../../videos/assets/new plant species nvideo1.mp4" width="100%" muted="muted"><div class="playbg">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.674 2.159 7.803 4.93a1.053 1.053 0 0 1 0 1.822l-7.803 4.93a1.115 1.115 0 0 1-1.511-.35A1.049 1.049 0 0 1 4 12.93V3.068C4 2.48 4.492 2 5.098 2c.203 0 .403.055.576.159z" fill="white"></path></svg>
+                                            </div></video>
+                                            <figcaption>New Plant species is discoverd by Brooknew University Professor</figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="card card6">
+                               <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <video class="crvideo1" src="../../videos/assets/new plant species nvideo1.mp4" width="100%" muted="muted"><div class="playbg">
+                                                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="m5.674 2.159 7.803 4.93a1.053 1.053 0 0 1 0 1.822l-7.803 4.93a1.115 1.115 0 0 1-1.511-.35A1.049 1.049 0 0 1 4 12.93V3.068C4 2.48 4.492 2 5.098 2c.203 0 .403.055.576.159z" fill="white"></path></svg>
+                                            </div></video>
+                                            <figcaption>New Plant species is discoverd by Brooknew University Professor</figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="LatestC">
+                    <div class="trending">
+                        <span class="t-span">Featured videos</span>
+                            <div class="trending-card">
+                                <div class="card card1">
+                                    <a href="./videos/htmls/featuredv.html">
+                                        <figure>
+                                                <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli">
+                                                <figcaption>Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="card card2">
+                                    <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                                            <figcaption> Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                                </figure>
+                                    </a>
+                                </div>
+                                <div class="card card3">
+                                    <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                                            <figcaption>Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                                </figure>
+                                    </a>
+                                </div>
+                                <div class="card card4">
+                                    <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                                            <figcaption> Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                                </figure>
+                                    </a>
+                                </div>
+                                <div class="card card5">
+                                    <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                                            <figcaption> Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                                </figure>
+                                    </a>
+                                </div>
+                                <div class="card card6">
+                                    <a href="./videos/htmls/featuredv.html">
+                                    <figure>
+                                            <img class="cardi" src="images/carousel/tesla_c1.jpg" alt="Trulli" >
+                                            <figcaption>Tesla Roars to New Heights as Stock Surges to All-Time High !</figcaption>
+                                </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div id="ClassicsC">
+                    <P class="videom">Classic videos will show here</P>
+                </div>
+            </div>
+            <div class="v-main-ad">
+                <p>............Advertisement...........</p>
+                <div class="tenor-gif-embed" data-postid="15631442" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/roofing-contractor-minneapolis-minneapolis-roofers-minneapolis-mn-roofing-roofing-company-in-minneapolis-roofing-contractors-in-minneapolis-gif-15631442">Roofing Contractor Minneapolis Minneapolis Roofers GIF</a>from <a href="https://tenor.com/search/roofing+contractor+minneapolis-gifs">Roofing Contractor Minneapolis GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                <p>Try now</p>
+                <div class="tenor-gif-embed" data-postid="14670207" data-share-method="host" data-aspect-ratio="2.19178" data-width="100%"><a href="https://tenor.com/view/roofing-contractors-minneapolis-gif-14670207">Roofing Contractors Minneapolis GIF</a>from <a href="https://tenor.com/search/roofing+contractors+minneapolis-gifs">Roofing Contractors Minneapolis GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            </div>
+        </div>
+
+    </main>
+    <script src="../../../script.js"></script>
+    <script src="../../../js/Video.js"></script>
 </body>
 </html>

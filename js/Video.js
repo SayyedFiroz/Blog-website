@@ -1,3 +1,4 @@
+default_link = document.getElementById("v-link-topv").click()
 function load(current_id)
 {
     let all_element=document.querySelectorAll('.v-link')
@@ -34,3 +35,23 @@ function show(current){
     }
 
 }
+console.log()
+let video=document.querySelectorAll(".crvideo1")
+let play =document.querySelectorAll(".playbg")
+let pause =document.querySelectorAll(".pausebg")
+console.log(play)
+console.log(pause)
+video.forEach((item, index) => {
+    console.log("ITEM",item,index)
+    item.addEventListener('mouseover', arrow=>{
+        video[index].play()
+        play[index].style.display = "none"
+        pause[index].style.display = "flex"
+    })
+    item.addEventListener('mouseout', arrow=>{
+        video[index].currentTime=0
+        video[index].pause()
+        play[index].style.display = "flex"
+        pause[index].style.display = "none"
+    }
+)})
