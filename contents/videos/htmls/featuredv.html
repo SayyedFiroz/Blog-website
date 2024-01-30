@@ -188,7 +188,6 @@
     
         video{
             position: relative;
-            z-index: 0;
         }
         .playbg{
             height: 1em;
@@ -203,7 +202,13 @@
             z-index: 1000;
             border-radius: 5px;
         }
-        
+        .main-video{
+            background-color:gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0 1rem 0;
+        }
 
         @media only screen and (max-width: 635px)
         {
@@ -292,8 +297,8 @@
         </div>
     </div>
     <main>
-        <div class="main-video">
-            <video width="100%" height="100%" controls>
+        <div class="main-video"     >
+            <video width="80%" height="80%" controls>
                 <source src="../assets/new plant species nvideo1.mp4" >
             </video>
         </div>
